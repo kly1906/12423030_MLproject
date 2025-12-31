@@ -2,16 +2,14 @@
 
 ## 1. Giới thiệu đề tài
 Đề tài gồm 2 bài toán:
-- Bài toán 1 (Regression): Dự đoán **Demand** dựa trên các yếu tố ảnh hưởng (giá, khuyến mãi, dịch bệnh, vùng miền, thời tiết,...).
-- Bài toán 2 (Classification): Dự đoán **nguy cơ hết hàng (Stockout)**.
+- Bài toán 1 (Regression): Dự đoán Demand dựa trên các yếu tố ảnh hưởng (giá, khuyến mãi, dịch bệnh, vùng miền, thời tiết,...).
+- Bài toán 2 (Classification): Dự đoán nguy cơ hết hàng (Stockout).
 
 Mục tiêu:
 - Hỗ trợ doanh nghiệp ước lượng nhu cầu và phát hiện sớm rủi ro hết hàng để đưa ra quyết định nhập hàng phù hợp.
-
 ---
-
 ## 2. Dataset
-Nguồn dữ liệu: (dán link Kaggle/dataset)
+Nguồn dữ liệu: https://www.kaggle.com/code/christophergspencer/retail-store-inventory-and-demand-forecasting/input
 
 ### Mô tả cột
 - Date: Ngày ghi chép
@@ -44,10 +42,8 @@ Quy trình xử lý:
    - Event: Promo_Epidemic  
    - Label Stockout  
 5) Train/Test split theo thời gian (80/20)  
-6) Train → Evaluate → Inference
-
+6) Train -> Evaluate -> Inference
 ---
-
 ## 4. Mô hình sử dụng và lý do chọn
 ### 4.1 Ridge Regression (Demand)
 - Ridge là hồi quy tuyến tính có regularization (L2), phù hợp khi dữ liệu có nhiều biến và có khả năng đa cộng tuyến.
@@ -59,9 +55,7 @@ Quy trình xử lý:
 ### 4.3 Random Forest (Stockout)
 - Bắt được quan hệ phi tuyến giữa các biến và Stockout.
 - Thường cho kết quả tốt hơn Logistic trong dữ liệu thực tế có tương tác phức tạp.
-
 ---
-
 ## 5. Kết quả
 ### 5.1 Metrics đánh giá
 - Regression: MAE, RMSE  
@@ -72,7 +66,6 @@ Quy trình xử lý:
 **Ridge (Demand)**
 - MAE: 16.837
 - RMSE: 22.33
-
 **Logistic Regression (Stockout)**
 - Precision: 0.7754
 - Recall: 1.0
@@ -88,7 +81,6 @@ Quy trình xử lý:
 - Confusion Matrix:
   [[13386, 150],
    [373, 1291]]
-
 Nhận xét:
 - Logistic đạt Recall cao (ít bỏ sót Stockout) nhưng có nhiều False Positive hơn.
 - Random Forest có Precision cao hơn (cảnh báo Stockout “chắc” hơn), giảm cảnh báo sai, phù hợp nếu ưu tiên giảm đặt hàng dư thừa.
