@@ -1,0 +1,10 @@
+# models
+*.joblib
+*.pkl
+*.pt
+*.h5
+*.keras
+
+# data 
+data/
+*.csv
