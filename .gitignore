@@ -1,10 +1,17 @@
-# models
+# Models 
 *.joblib
 *.pkl
 *.pt
 *.h5
 *.keras
 
-# data 
+# Data
 data/
 *.csv
+
+# Notebook cache 
+.ipynb_checkpoints/
+
+# Python 
+__pycache__/
+*.pyc
