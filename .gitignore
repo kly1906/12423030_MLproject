@@ -15,3 +15,7 @@ data/
 # Python 
 __pycache__/
 *.pyc
+
+# ignore trained models
+*.pkl
+*.joblib
